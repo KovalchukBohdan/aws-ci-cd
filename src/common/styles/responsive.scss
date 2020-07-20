@@ -1,0 +1,41 @@
+$sm-width: 568px;
+$md-width: 768px;
+$md-alt-width: 991px;
+$lg-width: 1024px;
+$xl-width: 1280px;
+
+@mixin sm {
+  @media screen and (min-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin md-alt {
+  @media screen and (min-width: #{$md-alt-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: #{$xl-width}) {
+    @content;
+  }
+}
+
+@mixin ie {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}

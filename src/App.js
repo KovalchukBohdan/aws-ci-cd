@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { withRouter } from 'react-router'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import DataContext from './context'
+import AnimatedSurveyRoutes from './pages/animated-survey-routes'
+import styles from './App.module.scss'
 
-function App() {
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#3d3d3d',
+    },
+    secondary: {
+      main: '#4fb0ae',
+    },
+  },
+})
+
+const App = props => {
+  const { history, location } = props
+
+  useEffect(() => {
+    history.push('/welcome')
+  }, [history])
+
+  const nextStep = path => () => {
+    if (location.pathname !== path) {
+      history.push({
+        pathname: path,
+      })
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <DataContext.Provider value={{}}>
+        <div className={styles.container}>
+          <AnimatedSurveyRoutes nextStep={nextStep} />
+        </div>
+      </DataContext.Provider>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default withRouter(App)

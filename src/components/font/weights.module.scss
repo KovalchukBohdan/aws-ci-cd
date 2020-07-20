@@ -1,0 +1,30 @@
+$fontRegular: 'Roboto', sans-serif !default;
+$fontSemiBold: 'Roboto', sans-serif !default;
+$fontBold: 'Roboto', sans-serif !default;
+$fontExtraBold: 'Roboto', sans-serif !default;
+
+$weightRegular: 400 !default;
+$weightSemiBold: 500 !default;
+$weightBold: 700 !default;
+$weightExtraBold: 900 !default;
+
+// Weigths
+.regular {
+  font-family: $fontRegular;
+  font-weight: $weightRegular;
+}
+
+.semiBold {
+ font-family: $fontSemiBold;
+ font-weight: $weightSemiBold;
+}
+
+.bold {
+  font-family: $fontBold;
+  font-weight: $weightBold;
+}
+
+.extraBold {
+  font-family: $fontExtraBold;
+  font-weight: $weightExtraBold;
+}

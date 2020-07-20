@@ -1,0 +1,21 @@
+@import "~common/styles/responsive";
+
+.buttonBlock {
+  display: flex;
+}
+
+.icon {
+  position: relative;
+  top: 4px;
+  left: 6px;
+}
+
+.actionBlock {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.command {
+  padding-right: 4px;
+}

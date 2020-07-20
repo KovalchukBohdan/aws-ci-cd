@@ -1,0 +1,26 @@
+$neutral: #3d3d3d !default;
+$lighter: #808080 !default;
+$secondary: #4fb0ae !default;
+$error: #FD5653 !default;
+$white: #FFFFFF !default;
+
+// Colors
+.neutral {
+  color: $neutral;
+}
+
+.lighter {
+  color: $lighter;
+}
+
+.secondary {
+  color: $secondary;
+}
+
+.error {
+  color: $error;
+}
+
+.white {
+  color: $white;
+}

@@ -1,0 +1,23 @@
+@import "~common/styles/responsive";
+@import "~common/styles/variables";
+
+.textInput {
+  :global {
+    .MuiInput-input {
+      font-size: 24px;
+      color: $secondary;
+
+      @include md {
+        font-size: 30px;
+      }
+    }
+
+    .MuiInput-underline:before {
+      border-bottom: 1px solid rgba(79, 176, 174, 0.3);
+    }
+
+    .MuiInput-underline:hover:not(.Mui-disabled):before {
+      border-bottom: 2px solid rgba(79, 176, 174, 1);
+    }
+  }
+}

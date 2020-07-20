@@ -1,0 +1,13 @@
+@import '~common/styles/responsive';
+
+.wrapper {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  @include md {
+    width: 748px
+  }
+
+}

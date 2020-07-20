@@ -8,15 +8,15 @@ phases:
       - apt install -y nodejs
   pre_build:
     commands:
-    - echo ===> Installing dependencies ...
-    - npm i
+      - echo ===> Installing dependencies ...
+      - npm i
   build:
     commands:
-    - echo ===> Testing
-    - echo ===> Building
-    - npm run build
+      - echo ===> Testing
+      - echo ===> Building
+      - npm run build
 artifacts:
   files:
-    - "**/*"
+    - '**/*'
   discard-paths: no
   base-directory: build
