@@ -2,6 +2,8 @@
 
 .buttonBlock {
   display: flex;
+  min-height: 55px;
+  box-sizing: border-box;
 }
 
 .icon {
@@ -18,4 +20,21 @@
 
 .command {
   padding-right: 4px;
+}
+
+:global {
+  .button-animate-enter {
+    opacity: 0;
+  }
+  .button-animate-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .button-animate-exit {
+    opacity: 1;
+  }
+  .button-animate-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
 }

@@ -1,0 +1,74 @@
+@import '~common/styles/variables';
+
+.input {
+  display: none;
+}
+
+.label {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  background-color: rgba(79, 176, 174, 0.1);
+
+  box-shadow: rgba(79, 176, 174, 0.6) 0px 0px 0px 1px inset;
+
+  &:hover {
+    background-color: rgba(79, 176, 174, 0.3);
+  }
+}
+
+
+
+.key {
+  display: flex;
+  align-self: flex-start;
+  margin: 4px 8px 4px 4px;
+
+  position: relative;
+  width: 24px;
+  height: 24px;
+
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: rgb(79, 176, 174);
+
+  box-sizing: border-box;
+
+  color: $secondary;
+  background-color: $white;
+}
+
+.text {
+  flex: 1 1 0%;
+}
+
+.check {
+  padding: 0px 8px 0px 20px;
+  display: none;
+  align-items: center;
+  height: 100%;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+input:checked + .label {
+  box-shadow: rgba(79, 176, 174, 0.8) 0px 0px 0px 2px inset;
+
+  .key {
+    color: $white;
+    background-color: $secondary;
+  }
+
+  .check {
+    display: flex;
+  }
+}

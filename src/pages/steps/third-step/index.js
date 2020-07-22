@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { SurveyStep, Form, QuestionHeader, ButtonContainer, Input } from 'components'
+import { SurveyStep, Form, QuestionHeader, ButtonContainer, Radio } from 'components'
 import DataContext from 'context'
 
 const FirstStep = props => {
@@ -9,10 +9,15 @@ const FirstStep = props => {
   return (
     <SurveyStep>
       <Form defaultValues={data[name]} {...props}>
-        <QuestionHeader counter={1}>
+        <QuestionHeader counter={2}>
           What is your first and last name?
         </QuestionHeader>
-        <Input name={name}/>
+        <div>
+          <Radio name="lastname" value="q"/>
+          <Radio name="lastname" value="w"/>
+          <Radio name="lastname" value="e"/>
+          <Radio name="lastname" value="r"/>
+        </div>
 
         <ButtonContainer content="OK" withIcon />
       </Form>

@@ -7,6 +7,7 @@ import { withRouter } from 'react-router'
 import WelcomeStep from '../welcome'
 import FirstStep from '../steps/first-step'
 import SecondStep from '../steps/second-step'
+import ThirdStep from '../steps/third-step'
 
 import styles from './styles.module.scss'
 
@@ -28,20 +29,17 @@ const AnimatedSurveyRoutes = props => {
         >
           <Switch location={location}>
             <Route exact path="/welcome">
-              <WelcomeStep nextStep={nextStep('/first')} />
+              <WelcomeStep nextStep={nextStep('/first')} withoutAnimateButton />
             </Route>
             <Route path="/first">
-              <FirstStep nextStep={nextStep('/second')} />
+              <FirstStep nextStep={nextStep('/second')} withoutAnimateButton />
             </Route>
             <Route path="/second">
-              <SecondStep nextStep={nextStep('/third')} />
+              <SecondStep nextStep={nextStep('/third')} name="name"/>
             </Route>
-            {/* <Route path="/third">
-                  <ThirdStep nextStep={nextStep("/complete")} />
-                </Route>
-                <Route path="/complete">
-                  <Complete />
-                </Route> */}
+            <Route path="/third">
+              <ThirdStep nextStep={nextStep("/complete")} name="last"/>
+            </Route>
 
             <Redirect to="/welcome" />
           </Switch>

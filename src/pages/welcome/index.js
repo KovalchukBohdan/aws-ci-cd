@@ -1,20 +1,30 @@
-import React, { useEffect } from 'react'
-import { Font, Form, SurveyStep, ImgContainer, ButtonContainer } from 'components'
+import React from 'react'
+import {
+  Font,
+  Form,
+  SurveyStep,
+  ImgContainer,
+  ButtonContainer,
+} from 'components'
 import welcomeImg from 'assets/welcome.png'
 
 const WelcomeStep = props => {
-  const onFormSubmit = e => {
-    props.nextStep()
-  }
-
   return (
     <SurveyStep width={880} textAlign="center">
-      <Form onSubmit={onFormSubmit}>
-        <ImgContainer src={welcomeImg} alt="Welcome to the MAHA Purpose Experience!"/>
+      <Form {...props}>
+        <ImgContainer
+          src={welcomeImg}
+          alt="Welcome to the MAHA Purpose Experience!"
+        />
         <Font type="heading" element="h1">
           Welcome to the MAHA Purpose Experience!
         </Font>
-        <ButtonContainer fontType="heading" content="Start" align="center" />
+        <ButtonContainer
+          fontType="heading"
+          content="Start"
+          align="center"
+          withoutAnimateButton={props.withoutAnimateButton}
+        />
       </Form>
     </SurveyStep>
   )
