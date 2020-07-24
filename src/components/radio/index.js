@@ -1,7 +1,7 @@
 import React from 'react'
 import { Font } from 'components'
 import CheckIcon from '@material-ui/icons/Check'
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form'
 import styles from './styles.module.scss'
 
 const Radio = props => {

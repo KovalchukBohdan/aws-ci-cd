@@ -20,7 +20,7 @@ const App = props => {
   const { history, location } = props
 
   useEffect(() => {
-    history.push('/third')
+    history.push('/fourth')
   }, [history])
 
   const nextStep = path => () => {

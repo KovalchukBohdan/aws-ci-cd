@@ -1,0 +1,76 @@
+@import '~common/styles/variables';
+
+.container {
+  width: 100%;
+  height: 64px;
+  box-sizing: border-box;
+  background-color: rgba(79, 176, 174, 0.1);
+  color: rgb(79, 176, 174);
+  display: flex;
+  flex-direction: row;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(79, 176, 174);
+  border-image: initial;
+  border-radius: 3px;
+}
+
+.label {
+  width: 100%;
+
+  &:hover {
+    background-color: rgba(79, 176, 174, 0.3);
+  }
+
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  box-shadow: rgb(79, 176, 174) -1px 0px;
+  flex: 1 1 0%;
+  outline: none;
+  transition: all 0.1s ease-out 0s;
+
+  &:not(:last-child) {
+    border-right: 1px solid rgb(79, 176, 174);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(79, 176, 174, 0.3);
+  }
+}
+.input {
+  display: none;
+}
+
+input:checked + .label {
+  background-color: rgb(79, 176, 174);
+
+  .text {
+    color: rgb(237, 247, 247);
+  }
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.legendItem {
+  width: calc(100% / 3);
+
+  &:nth-child(2) {
+    text-align: center;
+  }
+
+  &:last-of-type {
+    text-align: right;
+  }
+}

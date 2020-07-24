@@ -6,6 +6,7 @@ export { default as Form } from './form'
 export { default as Input } from './input'
 export { default as QuestionHeader } from './question-header'
 export { default as Radio } from './radio'
+export { default as Rate } from './rate'
 export { default as SurveyStep } from './survey-step'
 export { default as ImgContainer } from './img-container'
 

@@ -8,6 +8,7 @@ import WelcomeStep from '../welcome'
 import FirstStep from '../steps/first-step'
 import SecondStep from '../steps/second-step'
 import ThirdStep from '../steps/third-step'
+import FourthStep from '../steps/fourth-step'
 
 import styles from './styles.module.scss'
 
@@ -38,7 +39,10 @@ const AnimatedSurveyRoutes = props => {
               <SecondStep nextStep={nextStep('/third')} name="name"/>
             </Route>
             <Route path="/third">
-              <ThirdStep nextStep={nextStep("/complete")} name="last"/>
+              <ThirdStep nextStep={nextStep("/fourth")} name="last"/>
+            </Route>
+            <Route path="/fourth">
+              <FourthStep nextStep={nextStep("/complete")} name="rate"/>
             </Route>
 
             <Redirect to="/welcome" />
