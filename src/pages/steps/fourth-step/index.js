@@ -1,14 +1,12 @@
 import React, { useContext } from 'react'
-import { SurveyStep, Form, QuestionHeader, ButtonContainer, Rate } from 'components'
-import DataContext from 'context'
+import { SurveyStep, Form, QuestionHeader, ButtonContainer, Rate } from 'Components'
 
 const FourthStep = props => {
   const { name } = props
-  const data = useContext(DataContext)
 
   return (
     <SurveyStep>
-      <Form defaultValues={data[name]} {...props}>
+      <Form {...props}>
         <QuestionHeader counter={3}>
           I have a clear purpose that guides my life.
         </QuestionHeader>

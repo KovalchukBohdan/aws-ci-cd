@@ -1,5 +1,7 @@
 import React from 'react'
 
-const DataContext = React.createContext(null)
+const DataContext = React.createContext()
+const HeaderContext = React.createContext()
 
-export default DataContext
+
+export { DataContext, HeaderContext }

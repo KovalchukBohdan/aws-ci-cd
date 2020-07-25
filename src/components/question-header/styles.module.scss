@@ -10,9 +10,5 @@
   position: absolute;
   right: 100%;
   padding-right: 8px;
-  line-height: calc(20px * 1.4);
-
-  @include md {
-    line-height: calc(24px * 1.4);
-  }
+  height: 100%;
 }

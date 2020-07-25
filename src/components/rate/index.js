@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
-import { Font } from 'components'
+import { Font } from 'Components'
 import styles from './styles.module.scss'
 
 const RateItem = props => {

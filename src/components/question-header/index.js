@@ -1,20 +1,30 @@
 import React from 'react'
-import { Font } from 'components'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import { Font } from 'Components'
 import styles from './styles.module.scss'
 
 const QuestionHeader = props => {
-  const { counter, children } = props
+  const {
+    counter,
+    children,
+    type = 'heading',
+    marginBottom = 32,
+    isDot = false,
+  } = props
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ marginBottom }}>
       {counter && (
-        <Font className={styles.counter} element="div" type="counter" color="secondary">
-          {counter} <ArrowForwardIcon style={{ fontSize: '14px' }}/>
+        <Font
+          className={styles.counter}
+          element="div"
+          type="counter"
+          color="secondary"
+        >
+          {counter}
+          {isDot ? '.' : <ArrowForwardIcon style={{ fontSize: '14px' }} />}
         </Font>
       )}
-      <Font type="heading" style={{ marginBottom: 32 }}>
-        {children}
-      </Font>
+      <Font type={type}>{children}</Font>
     </div>
   )
 }

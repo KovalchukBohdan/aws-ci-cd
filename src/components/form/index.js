@@ -1,14 +1,7 @@
 import React, { useEffect } from 'react'
-import { useForm, FormProvider } from "react-hook-form"
+import { useFormContext } from 'react-hook-form'
 
-export default function Form({
-  defaultValues,
-  children,
-  nextStep,
-  prevStep,
-  onSubmit,
-}) {
-  const methods = useForm({ defaultValues })
+const Form = ({ defaultValues, children, nextStep, prevStep, onSubmit }) => {
   const {
     register,
     errors,
@@ -16,7 +9,7 @@ export default function Form({
     getValues,
     watch,
     formState: { isDirty, isSubmitting, touched, submitCount },
-  } = methods
+  } = useFormContext()
 
   useEffect(() => {
     const listener = event => {
@@ -36,22 +29,7 @@ export default function Form({
     nextStep()
   }
 
-  return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmitHandle)}>
-        {React.Children.map(children, child => {
-          return child && child.props.name
-            ? React.createElement(child.type, {
-                ...{
-                  ...child.props,
-                  register: register,
-                  key: child.props.name,
-                  errors: errors[child.props.name],
-                },
-              })
-            : child
-        })}
-      </form>
-    </FormProvider>
-  )
+  return <form onSubmit={handleSubmit(onSubmitHandle)}>{children}</form>
 }
+
+export default Form

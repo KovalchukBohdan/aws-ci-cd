@@ -1,6 +1,6 @@
 import React from 'react'
 import MaterialButton from '@material-ui/core/Button'
-import Font from 'components/font'
+import Font from 'Components/font'
 
 const Button = props => {
   return (

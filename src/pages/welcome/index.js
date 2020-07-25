@@ -5,8 +5,8 @@ import {
   SurveyStep,
   ImgContainer,
   ButtonContainer,
-} from 'components'
-import welcomeImg from 'assets/welcome.png'
+} from 'Components'
+import welcomeImg from 'Assets/welcome.png'
 
 const WelcomeStep = props => {
   return (

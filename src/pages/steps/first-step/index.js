@@ -1,5 +1,5 @@
 import React from 'react'
-import { SurveyStep, Form, QuestionHeader, ButtonContainer } from 'components'
+import { SurveyStep, Form, QuestionHeader, ButtonContainer } from 'Components'
 
 const FirstStep = props => {
   return (
