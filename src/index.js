@@ -1,15 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './index.scss'
 
 const rootElement = document.getElementById('root')
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_API_URI,
+  cache: new InMemoryCache(),
+})
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>,
   rootElement,

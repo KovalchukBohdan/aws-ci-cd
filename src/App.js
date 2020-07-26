@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router'
 import { useForm, FormProvider } from 'react-hook-form'
+import {
+  gql,
+  useQuery,
+} from '@apollo/client'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { DataContext, HeaderContext } from 'Context'
 import { StickyHeader } from 'Components'
@@ -18,8 +22,19 @@ const theme = createMuiTheme({
   },
 })
 
+const EXCHANGE_RATES = gql`
+  query GetExchangeRates {
+    rates(currency: "USD") {
+      currency
+      rate
+    }
+  }
+`
+
 const App = props => {
   const { history, location } = props
+
+  const { loading, error, data } = useQuery(EXCHANGE_RATES)
 
   // Response from BE call
   const response = {
